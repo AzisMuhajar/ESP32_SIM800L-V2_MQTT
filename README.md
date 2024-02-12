@@ -11,13 +11,3 @@ broker MQTT yang digunakan pada percobaan ini yaitu Broker EMQX.
 ### Software/Tools yang digunakan
 1. Visual Studio Code
 2. Broker dekstop EMQX
-
-## PINOUT
-ESP32      SIM800L-V2      GPS NEO6M      Power Supply External 5VDC      
-Vin                        Vcc
-GND        GND             GND            GND
-RX2        TXD
-TX2        RXD
-26                        TX
-27                        RX
-           VCC                           5V
