@@ -15,7 +15,7 @@ const char user[] = "";
 const char pass[] = "";
 
 // MQTT details
-const char* broker = "broker.emqx.io";
+const char* broker = "mqtt://195.35.8.68"; // broker.emqx.io
 const char* topicLatitude = "gpsTracker/Latitude";
 const char* topicLongitude = "gpsTracker/Longitude";
 
