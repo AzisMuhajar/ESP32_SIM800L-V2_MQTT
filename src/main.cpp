@@ -18,6 +18,7 @@ const char pass[] = "";
 const char* broker = "mqtt://195.35.8.68"; // broker.emqx.io
 const char* topicLatitude = "gpsTracker/Latitude";
 const char* topicLongitude = "gpsTracker/Longitude";
+const char* topicGPS = "gpsTracker/dataGPS";
 
 TinyGsm modem(SerialAT);
 TinyGsmClient client(modem);
@@ -95,6 +96,7 @@ void loop()
   if (now - lastMsg > 20000) {
     lastMsg = now;
     
+    /*
     // Publish Latitude
     char latString[12];
     dtostrf(latitude, 6, 6, latString);
@@ -108,6 +110,14 @@ void loop()
     Serial.print("Longitude: ");
     Serial.println(lngString);
     mqtt.publish(topicLongitude, lngString);
+    */
+    
+    // publish lat+long
+    char dataGPS[30];
+    sprintf(dataGPS, "%.6f,%.6f", latitude, longitude);
+    Serial.print("Longitude: ");
+    Serial.println(dataGPS);
+    mqtt.publish(topicGPS, dataGPS);
     
   }
 
